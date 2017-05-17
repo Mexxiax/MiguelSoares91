@@ -1,0 +1,233 @@
+#moldura{
+	border: 5px;
+	border-radius:12px;
+	/*margin-left: 20px;
+	margin-right: 20px;*/
+	margin-top: 20px;
+	background-color: #3b5998;
+	/*rgb(96,96,96);*/
+	border-style: solid;
+	border-color: rgb(96,96,96);
+	text-align: center;
+	box-shadow: 30px 30px 15px black;
+
+}
+
+.shop{
+	color: white;
+	font-size: 25px;
+}
+.shop:visited{
+	color: yellow;
+}
+.shop:hover{
+	color: red;
+} 
+.navbar-inverse{
+	background-color: #3b5998;
+	margin-bottom: 0px;
+	border-radius: 0px;
+	border-width: 0px;
+}
+.navbar-brand{
+	font-size: 36px;
+}
+.navbar-inverse .navbar-brand {
+	color: white;
+}
+.navbar-nav{
+	color: white;
+}
+.book h1{
+	color:orange;
+	text-align: center;
+	font-size: 28px;
+	font-family: helvetica, sans-serif;
+	font-style: italic;
+	font-weight: bold;
+}
+.book p{
+	color:white;
+	text-align: justify;
+	height: 80%;
+	width: 80%;
+	margin:0px auto;
+	margin-bottom: 10px;
+	font-family: times, sans-serif;
+	margin-top: 10px;
+}
+.book h2{
+text-align: center;
+color: #3b5998;
+font-size: 24px;
+font-weight: bold;
+}
+.book h3{
+	color: white;
+	text-align: center;
+	font-size: 24px;
+	font-weight: bold;
+	margin-right: 10px;
+}
+.label1{
+	width: 100px;
+	background-color: white;
+	border-color: #3b5998;
+	border-style: solid;
+	border-width: 5px;
+	border-radius: 20px;
+	color: black;	
+	font-size: 14px;
+}
+.box{
+
+	margin-top: 20px;
+	background-color: #444;
+	color: #C4BE92;
+    text-align: center;
+    height: 600px;
+    -webkit-border-radius: 12px;
+    border-radius: 12px; 
+    -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;
+    padding: .8em .8em 1em;
+
+  	-webkit-box-shadow: 0px 0px 12px 0px #000;
+    box-shadow: 0px 0px 12px 0px #000;
+}
+.countlike{
+	margin-right: 20px;		
+}
+.display {
+	background-image: url("../fundo4.jpg");
+	margin-top: 0px;
+	margin-bottom: 20px;
+}
+img{
+	width:200px;
+	height:300px;
+	margin-top: 20px;
+	box-shadow: 10px 10px 5px;
+}
+body {
+	margin:0px;
+}
+.book{
+	display: none;
+}
+.book.active{
+	display: block;
+}
+.foot{
+	margin-left: 50px;
+	margin-right: 50px;	
+	color: #3b5998;
+}
+.mendi-social-networks {
+    width: 100%;
+    margin: 0;
+    font-size: 12px;
+}
+.mendi-social-networks li {
+	float: left;
+	display: inline;
+	width: 25%;	
+	color: #ffffff;
+	position: relative;
+} 
+.mendi-social-networks li i {
+	font-size: 50px;
+	float: left;
+	width: 60px;
+}
+.mendi-social-networks li a {
+	color: #ffffff;
+	padding: 20px 20px 20px 20px;
+	float: left;
+	width: 100%;
+	box-sizing: border-box;
+    
+}
+.mendi-social-networks li a:hover {
+     text-decoration:none;    
+}
+.mendi-social-networks li p {
+	font-size: 13px;
+	font-weight: 600;
+	letter-spacing: 0.5px;
+	text-transform: uppercase;
+	margin: 2px 0 0px;
+}
+.mendi-social-networks li .followers {
+	text-transform: uppercase;
+}
+.mendi-social-networks li:before {
+	position: absolute;
+	content: "\f105";
+	right: 30px;
+	top: 0;
+	bottom: 0;
+	height: 30px;
+	width: 30px;
+	border: 1px solid #ffffff;
+	border-radius: 30px;
+	margin: auto;
+	font-size: 18px;
+	font-family: FontAwesome;
+	color: #ffffff;
+	text-align: center;
+	line-height: 26px;
+}
+.mendi-social-networks li:hover:before {
+	background-color: #ffffff;
+	color: #999999;
+}
+.mendi-social-networks li.facebook {
+	background-color: #4d6bab;
+}
+.mendi-social-networks li.twitter {
+	background-color: #4ec6f8;
+}
+.mendi-social-networks li.googleplus {
+	background-color: #d34836;
+}
+.mendi-social-networks li.linkedin {
+	background-color: #248cc9;
+}
+.mendi-social-networks{
+	padding: 0;
+}
+.col-lg-12{
+	padding: 0;
+}
+.butoes{
+	margin-bottom: 20px;
+
+}
+#stats{
+	display: none;
+}
+.scroll{
+	margin-top: 20px;
+}
+.like{
+	box-shadow: 10px 10px 5px black;
+	width: 100px;
+	height: 60px;
+}
+.dislike{
+	box-shadow: 10px 10px 5px black;
+	width: 100px;
+	height: 60px;
+}
+.next{
+	background-color: transparent;
+  	border-color: #ccc;
+  	border-width: 0;
+  	color: white;
+}
+.previous{
+	background-color: transparent;
+    border-color: #ccc;
+    border-width: 0;
+    color: white;
+}
