@@ -231,3 +231,6 @@ body {
     border-width: 0;
     color: white;
 }
+.book button{
+	margin-bottom: 20px;
+}

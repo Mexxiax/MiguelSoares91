@@ -128,15 +128,19 @@ $("#moldura button.next").click(function(){
 var count = 0;
 $("#stats label.countlike").text("Gosto: "+count);
 // $(".book button.like").click(function(){
-$(".book").on("click","button.like", function(){
+$("body").on("click",".book button.like", function(){
 	count++;
 	$("#stats label.countlike").text("Gosto: "+count);
-	$(".dislike").hide();
+	$(".dislike",$(".book.active")).hide();
+	$(".like",$(".book.active")).removeClass("pull-right");
 
 });
 var counte = 0;
 $("#stats label.countdislike").text("Não Gosto: "+counte);
-$(".book button.dislike").click(function(){
+// $(".book button.dislike").click(function(){
+$("body").on("click",".book button.dislike", function(){
 	counte++;
 	$("#stats label.countdislike").text("Não Gosto: "+counte);
+	$(".like",$(".book.active")).hide();
+	$(".dislike",$(".book.active")).removeClass("pull-left");
 });
