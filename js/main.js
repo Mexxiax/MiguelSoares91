@@ -1,3 +1,6 @@
+var likeButtonClicked = false;
+var dislikeButtonClicked = false;
+
 var currsymb = {
 	'USD': '$', // US Dollar
     'EUR': '€', // Euro
@@ -74,8 +77,14 @@ $.ajax({
 		LoadDataWithHTML(value);
 	});
 	$(".book").eq(0).addClass("active");
-
 });
+$("#moldura button.upagina").click(function(){
+	// $allBooks = $(".book");
+	// $parent = $(".book.active");
+		$("#moldura").hide()
+		$("#stats").show();
+});
+
 var inAnimation = false;
 $("#moldura button.previous").click(function(){
 	$allBooks = $(".book");
@@ -100,6 +109,8 @@ $("#moldura button.previous").click(function(){
 });
 var inAnimation = false;
 $("#moldura button.next").click(function(){
+	likeButtonClicked = false;
+	dislikeButtonClicked = false;
 	if(!inAnimation){
 		inAnimation = true;
 	$allBooks = $(".book");
@@ -127,16 +138,39 @@ $("#moldura button.next").click(function(){
 
 var count = 0;
 $("#stats label.countlike").text("Gosto: "+count);
-// $(".book button.like").click(function(){
-$(".book").on("click","button.like", function(){
-	count++;
-	$("#stats label.countlike").text("Gosto: "+count);
-	$(".dislike").hide();
-
+$("body").on("click",".book button.like", function(){
+	if(!likeButtonClicked){
+		likeButtonClicked = true;
+		count++;
+		$("#stats label.countlike").text("Gosto: "+count);
+		$(".dislike",$(".book.active")).hide();
+		$(".like",$(".book.active")).removeClass("pull-right");
+	}else{
+		likeButtonClicked = false;
+		count--;
+		$("#stats label.countlike").text("Gosto: "+count);
+		$(".dislike",$(".book.active")).show();
+		$(".like",$(".book.active")).addClass("pull-right");
+	}
+	
 });
 var counte = 0;
 $("#stats label.countdislike").text("Não Gosto: "+counte);
-$(".book button.dislike").click(function(){
-	counte++;
+$("body").on("click",".book button.dislike", function(){
+	if(!dislikeButtonClicked){
+		dislikeButtonClicked = true;
+		counte++;
 	$("#stats label.countdislike").text("Não Gosto: "+counte);
+	$(".like",$(".book.active")).hide();
+	$(".dislike",$(".book.active")).removeClass("pull-left");
+}
+else{
+		dislikeButtonClicked = false;
+		counte--;
+		$("#stats label.countdislike").text("Não Gosto: "+counte);
+		$(".like",$(".book.active")).show();
+		$(".dislike",$(".book.active")).addClass("pull-left");
+	}
 });
+
+
