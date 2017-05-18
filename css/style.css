@@ -234,3 +234,15 @@ body {
 .book button{
 	margin-bottom: 20px;
 }
+.upagina{
+	background-color: transparent;
+  	border-color: #ccc;
+  	border-width: 0;
+  	color: white;
+}
+#footer{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	padding:0;
+}

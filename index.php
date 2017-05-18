@@ -24,7 +24,40 @@
   </nav>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-lg-12">
+      
+      <div id="moldura" class="row col-sm-4 col-sm-offset-4">
+        <div class="scroll row clearfix col-sm-10 col-sm-offset-1">
+          <button class="previous pull-left" type="button" aria-label="left Align">
+            <span class="glyphicon glyphicon glyphicon-arrow-left" aria-hidden="true"></span>Anterior
+          </button>
+          <button class="upagina " type="button" aria-label="left Align">Resultados</button> 
+          <button class="next pull-right" type="button" aria-label="left Align">
+            <span class="glyphicon glyphicon glyphicon-arrow-right pull-right" aria-hidden="true"></span>Próximo
+          </button>
+        </div>
+        <div id="bookContainer" class="row">
+         
+        </div>
+        
+        
+      </div>
+      <div id="fim" class="row col-sm-4 col-sm-offset-4">
+  
+      </div>
+      <div id="stats" class="box col-sm-4 col-sm-offset-4">
+        <h2>Estatísticas</h2>
+        <label class="label1 countlike pull-left"></label>
+        <label class="label1 countdislike pull-right"></label>
+      </div>
+      </div>
+
+  </div>
+
+  <script src="js/jquery-3.2.1.js"></script>
+  <script src="js/main.js"></script>
+</body>
+<footer id="footer">
+<div class="col-lg-12 container-fluid">
         <ul class="mendi-social-networks clearfix">
           <li class="facebook">
             <a href="" title="">
@@ -56,37 +89,5 @@
           </li>
         </ul>
       </div>
-      <div id="moldura" class="row col-sm-4 col-sm-offset-4">
-      <div class="scroll row clearfix col-sm-10 col-sm-offset-1">
-          <button class="previous pull-left" type="button" aria-label="left Align">
-            <span class="glyphicon glyphicon glyphicon-arrow-left" aria-hidden="true"></span>Anterior
-          </button>
-          <button class="next pull-right" type="button" aria-label="left Align">
-            <span class="glyphicon glyphicon glyphicon-arrow-right pull-right" aria-hidden="true"></span>Próximo
-          </button>
-        </div>
-        <div id="bookContainer" class="row">
-         
-        </div>
-        
-        
-      </div>
-      <div id="stats" class="box col-sm-4 col-sm-offset-4">
-        <h2>Estatísticas</h2>
-        <label class="label1 countlike pull-left"></label>
-        <label class="label1 countdislike pull-right"></label>
-      </div>
-      </div>
-      <div id="fim" class="col-sm-4 col-sm-offset-4">
-      <button class="upagina " type="button" aria-label="center Align">
-            <span class="glyphicon glyphicon glyphicon-arrow-left" aria-hidden="true"></span>Resultados
-          </button> 
-    </div>
-  </div>
-  <br>
-  <br>
-  <br>
-  <script src="js/jquery-3.2.1.js"></script>
-  <script src="js/main.js"></script>
-</body>
+</footer>
 </html>
