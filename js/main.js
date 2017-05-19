@@ -1,5 +1,6 @@
 var likeButtonClicked = false;
 var dislikeButtonClicked = false;
+var liststats = new Array();
 
 var currsymb = {
 	'USD': '$', // US Dollar
@@ -145,12 +146,14 @@ $("body").on("click",".book button.like", function(){
 		$("#stats label.countlike").text("Gosto: "+count);
 		$(".dislike",$(".book.active")).hide();
 		$(".like",$(".book.active")).removeClass("pull-right");
+		$(".like",$(".book.active")).addClass("liked");
 	}else{
 		likeButtonClicked = false;
 		count--;
 		$("#stats label.countlike").text("Gosto: "+count);
 		$(".dislike",$(".book.active")).show();
 		$(".like",$(".book.active")).addClass("pull-right");
+		$(".like",$(".book.active")).removeClass("liked");
 	}
 	
 });
@@ -163,6 +166,7 @@ $("body").on("click",".book button.dislike", function(){
 	$("#stats label.countdislike").text("Não Gosto: "+counte);
 	$(".like",$(".book.active")).hide();
 	$(".dislike",$(".book.active")).removeClass("pull-left");
+	$(".dislike",$(".book.active")).addClass("disliked");
 }
 else{
 		dislikeButtonClicked = false;
@@ -170,7 +174,34 @@ else{
 		$("#stats label.countdislike").text("Não Gosto: "+counte);
 		$(".like",$(".book.active")).show();
 		$(".dislike",$(".book.active")).addClass("pull-left");
+		$(".dislike",$(".book.active")).removeClass("disliked");
 	}
 });
+function loadstats(book){
+var insertstats = `
+<div class="book col-sm-10 col-sm-offset-1">
+<h3></h3>
+</div>`;
+
+$("#stats").append(insertstats);
+$statbook = $(".liked").eq(0);
+$("h3",$statbook).text(book.volumeInfo.title);
+}
+
+loadstats(book);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
