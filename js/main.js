@@ -2,7 +2,7 @@ var likeButtonClicked = false;
 var dislikeButtonClicked = false;
 var db = openDatabase('mydb', '1.0', 'Test DB', 2 * 1024 * 1024);
 db.transaction(function (tx) {
-	// tx.executeSql('DROP TABLE books');
+	tx.executeSql('DROP TABLE books');
 	tx.executeSql('CREATE TABLE IF NOT EXISTS books (id unique, opinion)');
 });
 
@@ -48,7 +48,7 @@ function LoadDataWithHTML(book){
 	$("#bookContainer").append(HTMLtoInsert);
 	$currentBook = $(".book").eq(-1);
 	$("h1",$currentBook).text(book.volumeInfo.title);
-	$('.hiddenFieldId',$currentBook).text(book.id);
+	$('.hiddenFieldId',$currentBook).text(book.volumeInfo.title);
 	$("h4 label",$currentBook).text(book.volumeInfo.publisher);
 	$("h5 label",$currentBook).text(book.volumeInfo.publishedDate);
 	$("p",$currentBook).text(book.volumeInfo.description);	
@@ -193,11 +193,9 @@ function LoadDataWithHTML(book){
 			$(".dislike",$(".book.active")).addClass("disliked");
 			$id = $('.hiddenFieldId',$parent).text();
 
-		// vamos buscar a opinion ao nosso custom attribute
 		$opinion = $(this).attr('data-opinion');
 
 		db.transaction(function (tx) {
-			//insert na table que criámos
 			tx.executeSql('INSERT INTO books(id, opinion) VALUES("' + $id + '","' + $opinion + '")');
 		});
 	}
@@ -213,18 +211,15 @@ function LoadDataWithHTML(book){
 });
 
 	$("#moldura button.upagina").click(function(){
-	// $allBooks = $(".book");
-	// $parent = $(".book.active");
 	$("#moldura").hide()
 	$("#stats").show();
 	db.transaction(function (tx) {
-			//buscar todos os resultados da nossa table
 			tx.executeSql('SELECT * FROM books', [], function (tx, results) {
 				$.each(results.rows,function(index,item){
-		   			//output de todas as rows/todos os resultados
-					// $statsbook = $("#stats")
-					var html = `<p>`+ item.opinion + item.id +`</p>`;
+					if (item.opinion == "like"){
+					var html = `<p>`+ item.id +`</p>`;
 					$("#stats h3").append(html);
+				}
 				});
 			}, null);
 		});
