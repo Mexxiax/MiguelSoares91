@@ -82,8 +82,8 @@ font-weight: bold;
 .box{
 
 	margin-top: 20px;
-	background-color: white;
-	color: black;
+	background-color: black;
+	color: white;
     text-align: center;
     border-radius: 12px; 
     padding: .8em .8em 1em;

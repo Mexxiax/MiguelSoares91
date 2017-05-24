@@ -31,13 +31,13 @@ function LoadDataWithHTML(book){
 	<h1></h1>
 	<h3 style="display:inline;"></h3><a class="shop" target="blank"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a>
 	<p></p>
-	<h4>Editora:<label></label></h4><h5>Publicado em:<label></label></h5>
+	<h4><label></label></h4><h5><label></label></h5>
 	<br>
 	<br>
-	<button data-opinion="dislike" class="btn down dislike pull-left btn-danger" type="button" aria-label="left Align">
+	<button id = "dis" data-opinion="dislike" class="btn down dislike pull-left btn-danger" type="button" aria-label="left Align">
 	<span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>Não Gosto
 	</button>
-	<button data-opinion="like" class="btn up like pull-right btn-success" type="button" aria-label="left Align">
+	<button id = "li" data-opinion="like" class="btn up like pull-right btn-success" type="button" aria-label="left Align">
 	<span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>Gosto
 	</button>
 	</div>
@@ -49,8 +49,8 @@ function LoadDataWithHTML(book){
 	$currentBook = $(".book").eq(-1);
 	$("h1",$currentBook).text(book.volumeInfo.title);
 	$('.hiddenFieldId',$currentBook).text(book.volumeInfo.title);
-	$("h4 label",$currentBook).text(book.volumeInfo.publisher);
-	$("h5 label",$currentBook).text(book.volumeInfo.publishedDate);
+	$("h4 label",$currentBook).text("Editora: " + book.volumeInfo.publisher + " Autor: " + book.volumeInfo.authors[0]);
+	$("h5 label",$currentBook).text("Publicado em: " + book.volumeInfo.publishedDate);
 	$("p",$currentBook).text(book.volumeInfo.description);	
 	if (typeof book.volumeInfo.imageLinks !== "undefined"){
 			//$("img",$currentBook).attr("alt","Sem capa disponível").css("color","#B22222");
@@ -109,6 +109,7 @@ function LoadDataWithHTML(book){
 			})
 		};
 	});
+
 	var inAnimation = false;
 	$("#moldura button.next").click(function(){
 		likeButtonClicked = false;
@@ -125,7 +126,7 @@ function LoadDataWithHTML(book){
 			if( index >= $allBooks.length-1){
 				$next = $allBooks.eq(0);
 				$("#moldura").hide()
-				$("#stats").show();
+				$("#res").trigger("click");
 
 			}
 			$parent.fadeOut(100,function(){
@@ -137,7 +138,6 @@ function LoadDataWithHTML(book){
 			})
 		};
 	});
-
 	var count = 0;
 	$("#stats label.countlike").text("Gosto: "+count);
 
@@ -224,18 +224,33 @@ function LoadDataWithHTML(book){
 			}, null);
 		});
 	});
+$(document).keyup( function(e) {
+    if (e.keyCode == 39) {
+     $("#nextpage").trigger("click");
+    };
+});
 
+$(document).keyup( function(e) {
+    if (e.keyCode == 37) {
+     $("#prevpage").trigger("click");
+    };
+});
 
+$(document).keyup( function(e) {
+    if (e.keyCode == 13) {
+     $("#res").trigger("click");
+    };
+});
 
-
-
-
-
-
-
-
-
-
-
+$(document).keyup( function(e) {
+    if (e.keyCode == 76) {
+     $("#li").trigger("click");
+    };
+});
+$(document).keyup( function(e) {
+    if (e.keyCode == 68) {
+     $("#dis").trigger("click");
+    };
+});
 
 
