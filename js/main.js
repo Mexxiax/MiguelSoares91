@@ -224,33 +224,38 @@ function LoadDataWithHTML(book){
 			}, null);
 		});
 	});
-$(document).keyup( function(e) {
+
+
+$(document).keydown( function(e) {
     if (e.keyCode == 39) {
      $("#nextpage").trigger("click");
     };
 });
 
-$(document).keyup( function(e) {
+$(document).keydown( function(e) {
     if (e.keyCode == 37) {
      $("#prevpage").trigger("click");
     };
 });
 
-$(document).keyup( function(e) {
+$(document).keydown( function(e) {
     if (e.keyCode == 13) {
      $("#res").trigger("click");
     };
 });
 
-$(document).keyup( function(e) {
+$(document).keydown( function(e) {
     if (e.keyCode == 76) {
      $("#li").trigger("click");
     };
 });
-$(document).keyup( function(e) {
+$(document).keydown( function(e) {
     if (e.keyCode == 68) {
      $("#dis").trigger("click");
     };
 });
 
 
+$("#search").keydown( function(e) {
+      e.stopPropagation();
+});
